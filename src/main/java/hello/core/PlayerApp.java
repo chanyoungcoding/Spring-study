@@ -2,6 +2,11 @@ package hello.core;
 
 import hello.core.common.FootballTeam;
 import hello.core.common.Player;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +57,14 @@ public class PlayerApp {
     FootballTeam team = new FootballTeam("Tottenham", "Premier League", 5, players);
 
     return ResponseEntity.ok(team);
+  }
+
+  @WebServlet(urlPatterns = "/hello")
+  public class HelloServlet extends HttpServlet {
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+    }
   }
 
 }
