@@ -20,7 +20,7 @@ public class ApiDemoController2 {
     private final MemberService memberService;
     private final OrderService orderService;
 
-    @GetMapping("/apiTest")
+    @GetMapping("/apiTest3")
     @ResponseBody
     public Member apiDemo() {
 
@@ -30,7 +30,7 @@ public class ApiDemoController2 {
         return memberService.findMember(1L);
     }
 
-    @GetMapping("/apiTest2")
+    @GetMapping("/apiTest4")
     @ResponseBody
     public Order apiDemo2() {
 
